@@ -1,0 +1,87 @@
+Problem Statement: 
+Imagine the following situation: you need to establish a QA process in a cross-functional team.
+The team builds a front-end application using REST APIs.
+1. Where would you start? What would be your first steps?
+2. Which process would you establish around testing new functionality? How would you
+want the features to be tested?
+3. If you would do test automation which techniques or best practices would you use?
+
+
+
+Proposed Solution:--------------------------------------------------------------------
+
+
+1. FirstStep: -------------------------------------------------------------------------
+1.1. I would start with planing the API Testing then the roadmap for complete QA process
+1.2. Analyze the API documentation & tools(no. of APIs to be test, size of data to used, team skills) 
+1.3. Based on analysis decide which tools to be used (POSTMAN or RESTAssured or Other)
+1.4. Lets Assume: We decide on RESTASsured as it enables code re-usability and Data Driven 
+Testing more effectively 
+1.5. Now create a framework and add the test smoke test cases for API which are ready
+1.6. Add end to end API test case once the build is found to stable (API chaining)
+1.7. Add test cases for each validation as per requirement against each API.
+1.8. Gradually make your tests more robust.
+1.9. Note: Similarly, in any tool, we can start with smoke/sanity test case to 
+start with & gradually take it make a robust framework. Which can accept the new 
+functionalities or alteration to existing functionalities with minimum effort.  
+1.10. Ensure below pointer are covered while testing each API:
+>Schema Validation(against Request & Response Payload)
+>Response Status()
+>EndPoint Validation
+>Authorization Validation
+>Invalid tests (Response Error contains correct error message)
+>Assertions (Response matches expected result)
+>Response Time (should be within the threshold)
+1.11. In meantime, ensure front end testing plan is ready
+
+
+
+2. Process and Best Practices:---------------------------------------------------------
+
+2.1 Testing process can be divide into stages:
+>Analysis of requirement followed by Q/A with stake holders 
+>Team meeting to understand the niche of feature & Ensuring common understanding 
+of the feature
+>Planning designing the tests, confirming with PO, execution, 
+defect reporting if any, rerun, regression, demo to PO, documentation & Release.
+
+2.2. Below pointer to be ensure while working in each stage above:
+>Prioritizing the test task/features/defect to fix
+>Agile team should be adaptive to run time changes in the requirement or priority
+> Testing should be done well in Requirement analysis phase itself so that we find the 
+gaps and defects when before feature is developed  
+>Automation framework can be added to CICD pipeline, to reduce manual intervention and 
+to monitor the build health
+> There should be dedicated environment/DB for testing/Automation run having same config as that of PROD
+> Documentation Plays important role for QA, hence make the best use of tools like JIRA. 
+As a stakeholder if any one opens any story from past sprint or future story from product backlog it,
+should give the complete information as below:
+> All the sub task, comments should suggest which type of testing is covered(only functional or other
+types as well like localization, cross browser)
+> Build, Env, devices, browsers covered while testing
+> Screenshots & recording of working feature can be added so that we can back track in 
+case of any regression failure in feature.
+
+
+
+3. Automation Best Practices----------------------------------------------------------
+3.1 Open source, cross platform tools are available in market with great
+community support. Such tool can be used for automation to start with
+2. I would go for tools like Appium/Selenium WebDriver which can be easily integrated 
+with other third party tools
+3. Robust framework is important - with minimum changes we should be able to update 
+the test cases. BDD/DDT or hybrid based on nature of the project
+4. Naming conventions are important. Should be user friendly for new team members to 
+understand
+5. Reusable method and utilities can be added to optimize the code
+6. Auto-reporting feature, Which shoot test report to concerned team
+7. Iteration with Test data  
+8. Explicit waits for synchronization.  
+9. Use dynamic xpath for locating element
+
+
+
+
+
+
+
